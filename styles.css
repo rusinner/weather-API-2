@@ -34,8 +34,7 @@ h1, h3 {
   align-items: flex-start;
   flex-direction: column;
 }
-
-::before {
+.weather-app .container::before {
   content: "";
   position: absolute;
   top: 0;
