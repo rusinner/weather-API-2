@@ -155,10 +155,30 @@ else if (
 ) {
     app.style.backgroundImage = `
     url(./images/${timeOfDay}/rainy.jpg)`;
+    btn.style.background = "#647d75";
+    if(timeOfDay == "night"){
+        btn.style.background = "#325c80";
+    }
+}else{
+    app.style.backgroundImage = `url(./images/${timeOfDay}/snowy.jpg)`;
+    btn.style.background = "#4d72aa";
+    if (timeOfDay == "night"){
+        btn.style.background = "#1b1b1b";
+    }
 }
+//fade in the page once all is done
+app.style.opacity = "1";
 
 
 
 
+    })
+
+    //if user tyoes a city that doesn't exixet throw an alert
+    .catch (() => {
+        alert("city not found,please try again");
+        app.style.opacity = "1";
     });
+    // fetchWeatherData();
 };
+
