@@ -108,7 +108,7 @@ if(!data.current.is_day){
 
 if(code==1000){
     //set the background image to clear if weather is clear
-    app.style.backgroundImage = `url(./images/${timeOfDay}clear.jpg)`;
+    app.style.backgroundImage = `url(./images/${timeOfDay}/clear.jpg)`;
     //change the button background color depending of its day or night
     btn.style.background = "#e5ba92";
     if(timeOfDay == "night"){
@@ -128,7 +128,7 @@ else if (
     code == 1279 ||
     code == 1282 
 ) {
-    app.style.backgroundImage =` url(./images/${timeOfDay}cloudy.jpg)`;
+    app.style.backgroundImage =` url(./images/${timeOfDay}/cloudy.jpg)`;
     btn.style.background = "#fa6d1b";
     if (timeOfDay == "night"){
         btn.style.background = "#181e27";
@@ -154,7 +154,7 @@ else if (
     code == 1252 
 ) {
     app.style.backgroundImage = `
-    url(./images/${timeOfDay}rainy.jpg)`
+    url(./images/${timeOfDay}/rainy.jpg)`;
 }
 
 
