@@ -33,7 +33,7 @@ cities.forEach((city) => {
 form.addEventListener('submit',(e)=>{
     //if the input field is empty throw alert
     if(search.value.length == 0){
-        alert('Please tyoe in a city name');
+        alert('Please type in a city name');
     }else{
         //change from default city to the selected one
         cityInput = search.value;
