@@ -2,11 +2,11 @@
 
 const app = document.querySelector('.weather-app');
 const temp = document.querySelector('.temp');
-const dateOutput = document.querySelector('.date');
+const dateOutput = document.querySelectorAll('.date');
 const timeOutput = document.querySelector('.time');
-const conditionOutput = document.querySelector('.condition');
+const conditionOutput = document.querySelectorAll('.condition');
 const nameOutput = document.querySelector('.name');
-const icon = document.querySelector('.icon');
+const icon = document.querySelectorAll('.icon');
 const cloudOutput = document.querySelector('.cloud');
 const windOutput = document.querySelector('.wind');
 const form = document.querySelector("#locationInput");
@@ -91,7 +91,7 @@ function fetchWeatherData(){
    const iconId = data.current.condition.icon.substr("//cdn.weatherapi.com/weather/64x64/".length);
 
    //reformat the ioon url to our own local folder path and add it to the page
-   icon.src = "./images/" + iconId;
+   icon.src = `./images/64x64/${timeOfDay}` + iconId;
 
 //add the weather details to the page
 cloudOutput.innerHTML = data.current.cloud + "%";
@@ -108,7 +108,7 @@ if(!data.current.is_day){
 
 if(code==1000){
     //set the background image to clear if weather is clear
-    app.style.backgroundImage = `url(./images/${timeOfDay}/clear.jpg)`;
+    app.style.backgroundImage = `url("./images/${timeOfDay}+"2"/clear.jpg")`;
     //change the button background color depending of its day or night
     btn.style.background = "#e5ba92";
     if(timeOfDay == "night"){
@@ -128,6 +128,7 @@ else if (
     code == 1279 ||
     code == 1282 
 ) {
+    
     app.style.backgroundImage =` url(./images/${timeOfDay}/cloudy.jpg)`;
     btn.style.background = "#fa6d1b";
     if (timeOfDay == "night"){
@@ -168,18 +169,17 @@ else if (
 }
 //fade in the page once all is done
 app.style.opacity = "1"
-
-   })
-    //if user tyoes a city that doesn't exixet throw an alert
+})
+    // // //if user types a city that doesn't exist throw an alert
     .catch (() => {
-        alert("city not found,please try again");
+        // alert("city not found,please try again");
         app.style.opacity = "1";
     });
 
 }
+app.style.opacity = "1";
 
 //call the function on page load
 fetchWeatherData();
 
-app.style.opacity = "1";
 
