@@ -167,18 +167,19 @@ else if (
     }
 }
 //fade in the page once all is done
-app.style.opacity = "1";
+app.style.opacity = "1"
 
-
-
-
-    })
-
+   })
     //if user tyoes a city that doesn't exixet throw an alert
     .catch (() => {
         alert("city not found,please try again");
         app.style.opacity = "1";
     });
-    // fetchWeatherData();
-};
+
+}
+
+//call the function on page load
+fetchWeatherData();
+
+app.style.opacity = "1";
 
